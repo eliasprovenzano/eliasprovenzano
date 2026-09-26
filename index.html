@@ -328,10 +328,9 @@
             <p>Portafolio oficial de proyectos y canciones.</p>
         </section>
 
-        <!-- Sección Sobre Mí con espacio para foto -->
+        <!-- Sección Sobre Mí -->
         <section class="about-section" id="sobre-mi">
             <div class="profile-img-container">
-                <!-- Cuando subas tu foto a GitHub, reemplaza mi-foto.png por el nombre exacto de tu archivo -->
                 <img src="mi-foto.png" alt="Elias Provenzano" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80'">
             </div>
             <div class="about-content">
@@ -437,7 +436,9 @@
             }
         ];
 
-        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v5')) || defaultTracks;
+        // Forzar actualización a versión 6 limpiando el almacenamiento anterior
+        localStorage.setItem('elias_playlist_v6', JSON.stringify(defaultTracks));
+        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v6'));
         let currentTrackIndex = 0;
         let isPlaying = false;
 
@@ -550,10 +551,7 @@
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // Save v5 structure to clear cache
-        localStorage.setItem('elias_playlist_v5', JSON.stringify(defaultTracks));
-
-        // Initial Load
+        // Carga inicial
         loadTrack(0);
     </script>
 </body>
