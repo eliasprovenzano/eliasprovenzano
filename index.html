@@ -1,87 +1,50 @@
-Fc:<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elias Provenzano | Sitio Oficial</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <title>Elias Provenzano | Portafolio Musical</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0d0f12;
-            --card-bg: rgba(22, 27, 34, 0.7);
-            --primary: #8a2be2;
-            --primary-glow: rgba(138, 43, 226, 0.4);
-            --accent: #00f2fe;
-            --accent-glow: rgba(0, 242, 254, 0.4);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border: rgba(255, 255, 255, 0.1);
-            --radius-lg: 24px;
-            --radius-md: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-secondary: #94a3b8;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
-            overflow-x: hidden;
+            color: var(--text-color);
             line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 70%, rgba(0, 242, 254, 0.12) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* --- Header & Nav --- */
         header {
+            background-color: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            background: rgba(13, 15, 18, 0.8);
-            border-bottom: 1px solid var(--border);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 30%, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            color: var(--accent);
-            -webkit-text-fill-color: initial;
+            font-weight: bold;
+            color: var(--accent-color);
         }
 
         nav ul {
@@ -91,253 +54,161 @@ Fc:<!DOCTYPE html>
         }
 
         nav a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            transition: var(--transition);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        nav a:hover, nav a.active {
-            color: #fff;
-            text-shadow: 0 0 10px var(--accent-glow);
+        nav a:hover {
+            color: var(--accent-color);
         }
 
-        .btn-upload-nav {
-            background: linear-gradient(135deg, var(--primary), #5b1399);
-            color: #fff;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px var(--primary-glow);
-        }
-
-        .btn-upload-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
-        }
-
-        /* --- Main Layout --- */
         main {
-            padding-top: 80px;
+            margin-top: 80px;
+            padding: 2rem;
             max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-bottom: 140px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* --- Hero Section --- */
         .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Player Section */
+        .player-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 4rem 0;
-            min-height: 80vh;
-        }
-
-        .hero-text h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.8rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-text h1 span {
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-text p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 90%;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), #00a8ff);
-            color: #000;
-            padding: 0.9rem 2rem;
-            border-radius: 30px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 20px var(--accent-glow);
-            transition: var(--transition);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px var(--accent-glow);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            color: #fff;
-            padding: 0.9rem 2rem;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.3);
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-card {
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 1/1;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid var(--border);
-        }
-
-        .hero-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* --- Section Titles --- */
-        .section-header {
-            margin: 4rem 0 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        /* --- Player & Playlist Grid --- */
-        .player-section-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
             gap: 2rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        .featured-track-display {
+        @media (max-width: 768px) {
+            .player-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .now-playing {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
-        .album-art-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            aspect-ratio: 1/1;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        .album-art {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        .track-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .track-info p {
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
         }
 
-        .album-art-wrapper img {
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-control {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .btn-control:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-play {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .btn-play:hover {
+            transform: scale(1.05);
+            color: var(--bg-color);
+        }
+
+        .progress-container {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .equalizer {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
             display: flex;
-            gap: 3px;
-            background: rgba(0,0,0,0.6);
-            padding: 6px 10px;
-            border-radius: 20px;
-            backdrop-filter: blur(4px);
+            align-items: center;
+            gap: 1rem;
         }
 
-        .bar {
-            width: 3px;
-            height: 15px;
-            background: var(--accent);
+        .progress-bar {
+            flex-grow: 1;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 3px;
-            animation: bounce 1s infinite alternate ease-in-out;
-            animation-play-state: paused;
+            cursor: pointer;
+            position: relative;
         }
 
-        .playing .bar {
-            animation-play-state: running;
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+            width: 0%;
         }
 
-        .bar:nth-child(2) { animation-delay: 0.2s; }
-        .bar:nth-child(3) { animation-delay: 0.4s; }
-        .bar:nth-child(4) { animation-delay: 0.1s; }
-
-        @keyframes bounce {
-            0% { height: 4px; }
-            100% { height: 18px; }
+        .time {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
         }
 
-        .current-track-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.3rem;
+        /* Playlist */
+        .playlist-container h3 {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
         }
 
-        .current-track-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Track List */
-        .playlist-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            max-height: 380px;
+        .playlist {
+            list-style: none;
+            max-height: 350px;
             overflow-y: auto;
-            padding-right: 5px;
-        }
-
-        .playlist-container::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .playlist-container::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.2);
-            border-radius: 10px;
         }
 
         .track-item {
@@ -345,442 +216,114 @@ Fc:<!DOCTYPE html>
             align-items: center;
             justify-content: space-between;
             padding: 0.8rem 1rem;
-            border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid transparent;
+            border-radius: 6px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: background-color 0.2s;
         }
 
         .track-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.08);
+            background-color: rgba(255, 255, 255, 0.05);
         }
 
         .track-item.active {
-            background: rgba(138, 43, 226, 0.15);
-            border-color: var(--primary);
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
         }
 
-        .track-left {
+        .track-details {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
 
-        .track-num {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            width: 20px;
-        }
-
-        .track-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 8px;
+        .track-details img {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
             object-fit: cover;
         }
 
-        .track-details h4 {
-            font-size: 0.95rem;
+        .track-title-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .track-title {
             font-weight: 600;
         }
 
-        .track-details p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .track-duration {
+        .track-artist {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
         }
 
-        /* --- Fixed Bottom Audio Player --- */
-        .bottom-player {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(18, 22, 28, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid var(--border);
-            padding: 0.8rem 2rem;
-            z-index: 999;
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .mini-track-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .mini-track-info img {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        .mini-track-info h4 {
-            font-size: 0.95rem;
-        }
-
-        .mini-track-info p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .player-controls {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .control-btns {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .control-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .control-btn:hover {
-            color: #fff;
-        }
-
-        .control-btn.active {
-            color: var(--accent);
-        }
-
-        .btn-play {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #fff;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .btn-play:hover {
-            transform: scale(1.08);
-            background: var(--accent);
-        }
-
-        .progress-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .progress-bar {
-            flex: 1;
-            height: 5px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 10px;
-            position: relative;
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 0.8rem;
-        }
-
-        .volume-bar {
-            width: 80px;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .volume-fill {
-            height: 100%;
-            width: 80%;
-            background: var(--text-main);
-            border-radius: 10px;
-        }
-
-        /* --- Modal Component --- */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .modal-content {
-            background: #161b22;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            width: 100%;
-            max-width: 500px;
+        footer {
+            text-align: center;
             padding: 2rem;
-            position: relative;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            margin-bottom: 0.4rem;
-            color: var(--text-muted);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: #fff;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: var(--accent);
-        }
-
-        /* --- About Section --- */
-        .about-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-top: 5rem;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 850px) {
-            .hero, .player-section-grid, .about-section {
-                grid-template-columns: 1fr;
-            }
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-            .bottom-player {
-                grid-template-columns: 1fr 1fr;
-            }
-            .mini-track-info {
-                grid-column: span 2;
-            }
-            .volume-control {
-                display: none;
-            }
-            nav ul {
-                display: none;
-            }
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
-        <div class="logo">
-            <i class="fa-solid fa-compact-disc fa-spin-pulse" style="--fa-animation-duration: 4s;"></i>
-            <span>Elias Provenzano</span>
-        </div>
+        <div class="logo">Elias Provenzano</div>
         <nav>
             <ul>
-                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#musica">Música</a></li>
-                <li><a href="#biografia">Biografía</a></li>
-                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        
-        </button>
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero" id="inicio">
-            <div class="hero-text">
-                <h1>Música original por <span>Elias Provenzano</span></h1>
-                <p>Bienvenido a mi sitio oficial. Explora mis últimos lanzamientos, sencillos y producciones exclusivas.</p>
-                <div class="hero-buttons">
-                    <a href="#musica" class="btn-primary"><i class="fa-solid fa-play"></i> Escuchar Ahora</a>
-                    <a href="#biografia" class="btn-secondary">Saber más</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-card">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Elias Provenzano">
-                </div>
-            </div>
+            <h1>Explora mi Música</h1>
+            <p>Portafolio oficial de proyectos y canciones.</p>
         </section>
 
-        <!-- Music Section / Player -->
-        <div class="section-header" id="musica">
-            <h2>Lanzamientos y Canciones</h2>
-        </div>
-
-        <section class="player-section-grid">
-            <div class="featured-track-display">
-                <div class="album-art-wrapper" id="artWrapper">
-                    <img id="mainAlbumArt" src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=600&q=80" alt="Album Art">
-                    <div class="equalizer">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
+        <section class="player-section" id="musica">
+            <div class="now-playing">
+                <div id="artWrapper">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=400&q=80" alt="Album Cover" class="album-art" id="currentCover">
+                </div>
+                <div class="track-info">
+                    <h3 id="currentTitle">Selecciona una canción</h3>
+                    <p id="currentArtist">Elias Provenzano</p>
+                </div>
+                <div class="controls">
+                    <button class="btn-control" id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="btn-control btn-play" id="playBtn"><i class="fa-solid fa-play"></i></button>
+                    <button class="btn-control" id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+                <div class="progress-container">
+                    <span class="time" id="currentTime">0:00</span>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
                     </div>
-                </div>
-                <div class="current-track-info">
-                    <h3 id="mainTrackTitle">Elias Provenzano - Selecciona una canción</h3>
-                    <p id="mainTrackAlbum">Álbum Oficial</p>
+                    <span class="time" id="durationTime">0:00</span>
                 </div>
             </div>
 
-            <div class="playlist-container" id="playlist">
-                <!-- Tracks loaded dynamically via JS -->
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about-section" id="biografia">
-            <div class="hero-card">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Elias Provenzano Live">
-            </div>
-            <div class="about-text">
-                <h2>Sobre Elias Provenzano</h2>
-                <p>Marplatense de River y Melomano.</p>
-    
+            <div class="playlist-container">
+                <h3>Lista de Reproducción</h3>
+                <ul class="playlist" id="playlist">
+                    <!-- Tracks rendered dynamically -->
+                </ul>
             </div>
         </section>
     </main>
 
-    <!-- Bottom Audio Player Container -->
-    <div class="bottom-player">
-        <div class="mini-track-info">
-            <img id="miniArt" src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=200&q=80" alt="Mini Art">
-            <div>
-                <h4 id="miniTitle">Selecciona una canción</h4>
-                <p id="miniArtist">Elias Provenzano</p>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Elias Provenzano. Todos los derechos reservados.</p>
+    </footer>
 
-        <div class="player-controls">
-            <div class="control-btns">
-                <button class="control-btn" id="shuffleBtn"><i class="fa-solid fa-shuffle"></i></button>
-                <button class="control-btn" id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
-                <button class="control-btn btn-play" id="playBtn"><i class="fa-solid fa-play"></i></button>
-                <button class="control-btn" id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
-                <button class="control-btn" id="repeatBtn"><i class="fa-solid fa-repeat"></i></button>
-            </div>
-            <div class="progress-container">
-                <span id="currentTime">0:00</span>
-                <div class="progress-bar" id="progressBar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <span id="durationTime">0:00</span>
-            </div>
-        </div>
-
-        <div class="volume-control">
-            <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
-            <div class="volume-bar" id="volumeBar">
-                <div class="volume-fill" id="volumeFill"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hidden HTML5 Audio Element -->
     <audio id="audioPlayer"></audio>
 
-    <!-- Modal for Uploading Track -->
-    <div class="modal" id="uploadModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Cargar Nueva Canción</h3>
-                <button class="modal-close" id="closeModalBtn">&times;</button>
-            </div>
-            <form id="uploadForm">
-                <div class="form-group">
-                    <label>Título de la canción</label>
-                    <input type="text" id="songTitle" placeholder="Ej: Mi Nuevo Tema" required>
-                </div>
-                <div class="form-group">
-                    <label>Álbum / Colección</label>
-                    <input type="text" id="songAlbum" placeholder="Ej: Sencillo 2026" required>
-                </div>
-                <div class="form-group">
-                    <label>Archivo de Audio (MP3 / WAV)</label>
-                    <input type="file" id="songFile" accept="audio/*" required>
-                </div>
-                <div class="form-group">
-                    <label>URL Imagen de Portada (Opcional)</label>
-                    <input type="url" id="songCover" placeholder="https://ejemplo.com/imagen.jpg">
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
-                    Guardar y Reproducir
-                </button>
-            </form>
-        </div>
-    </div>
-
     <script>
-// Default Tracks
+        // Default Tracks
         const defaultTracks = [
             {
                 id: 1,
@@ -797,7 +340,7 @@ Fc:<!DOCTYPE html>
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80",
+                cover: "portada2.jpg",
                 src: "epilogo.mp3"
             },
             {
@@ -806,7 +349,7 @@ Fc:<!DOCTYPE html>
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80",
+                cover: "portada3.jpg",
                 src: "exorcismo.mp3"
             },
             {
@@ -815,17 +358,17 @@ Fc:<!DOCTYPE html>
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80",
+                cover: "portada4.jpg",
                 src: "gen de la locura.mp3"
             },
             {
                 id: 5,
-                title: "acaros en tu boca",
+                title: "acaros en tu bosca",
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80",
-                src: "acaros en tu boca.mp3"
+                cover: "portada5.jpg",
+                src: "acaros en tu bosca.mp3"
             },
             {
                 id: 6,
@@ -833,14 +376,15 @@ Fc:<!DOCTYPE html>
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=400&q=80",
+                cover: "portada6.jpg",
                 src: "go on.mp3"
             }
         ];
 
-        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v3')) || defaultTracks;
+        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v4')) || defaultTracks;
         let currentTrackIndex = 0;
         let isPlaying = false;
+
         const audio = document.getElementById('audioPlayer');
         const playBtn = document.getElementById('playBtn');
         const prevBtn = document.getElementById('prevBtn');
@@ -850,125 +394,110 @@ Fc:<!DOCTYPE html>
         const progressFill = document.getElementById('progressFill');
         const currentTimeEl = document.getElementById('currentTime');
         const durationTimeEl = document.getElementById('durationTime');
-        const artWrapper = document.getElementById('artWrapper');
 
         function renderPlaylist() {
             playlistContainer.innerHTML = '';
             playlist.forEach((track, index) => {
-                const trackEl = document.createElement('div');
+                const trackEl = document.createElement('li');
                 trackEl.className = `track-item ${index === currentTrackIndex ? 'active' : ''}`;
-                trackEl.onclick = () => selectTrack(index);
                 trackEl.innerHTML = `
-                    <div class="track-left">
-                        <span class="track-num">${index + 1}</span>
-                        <img src="${track.cover}" class="track-img" alt="${track.title}">
-                        <div class="track-details">
-                            <h4>${track.title}</h4>
-                            <p>${track.artist} • ${track.album}</p>
+                    <div class="track-details">
+                        <img src="${track.cover}" alt="${track.title}" onerror="this.src='https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=400&q=80'">
+                        <div class="track-title-container">
+                            <span class="track-title">${track.title}</span>
+                            <span class="track-artist">${track.artist}</span>
                         </div>
                     </div>
-                    <span class="track-duration">${track.duration || '--:--'}</span>
+                    <span class="time">${track.duration}</span>
                 `;
+                trackEl.addEventListener('click', () => loadTrack(index, true));
                 playlistContainer.appendChild(trackEl);
             });
         }
 
-        function loadTrack(index) {
+        function loadTrack(index, autoPlay = false) {
             currentTrackIndex = index;
-            const track = playlist[index];
+            const track = playlist[currentTrackIndex];
+            
+            document.getElementById('currentTitle').textContent = track.title;
+            document.getElementById('currentArtist').textContent = track.artist;
+            
+            const coverImg = document.getElementById('currentCover');
+            coverImg.src = track.cover;
+            coverImg.onerror = function() {
+                this.src = 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=400&q=80';
+            };
+
             audio.src = track.src;
-
-            document.getElementById('mainTrackTitle').innerText = track.title;
-            document.getElementById('mainTrackAlbum').innerText = `${track.artist} - ${track.album}`;
-            document.getElementById('mainAlbumArt').src = track.cover;
-
-            document.getElementById('miniTitle').innerText = track.title;
-            document.getElementById('miniArtist').innerText = track.artist;
-            document.getElementById('miniArt').src = track.cover;
-
+            
             renderPlaylist();
+
+            if (autoPlay) {
+                playTrack();
+            }
         }
 
         function playTrack() {
-            audio.play();
             isPlaying = true;
+            audio.play();
             playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-            artWrapper.classList.add('playing');
         }
 
         function pauseTrack() {
-            audio.pause();
             isPlaying = false;
+            audio.pause();
             playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-            artWrapper.classList.remove('playing');
         }
 
-        function selectTrack(index) {
-            loadTrack(index);
-            playTrack();
-        }
-
-        playBtn.onclick = () => isPlaying ? pauseTrack() : playTrack();
-        prevBtn.onclick = () => {
-            currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
-            selectTrack(currentTrackIndex);
-        };
-        nextBtn.onclick = () => {
-            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-            selectTrack(currentTrackIndex);
-        };
-
-        audio.ontimeupdate = () => {
-            if (audio.duration) {
-                const pct = (audio.currentTime / audio.duration) * 100;
-                progressFill.style.width = `${pct}%`;
-                currentTimeEl.innerText = formatTime(audio.currentTime);
-                durationTimeEl.innerText = formatTime(audio.duration);
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                pauseTrack();
+            } else {
+                playTrack();
             }
-        };
+        });
 
-        progressBar.onclick = (e) => {
+        prevBtn.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(currentTrackIndex, isPlaying);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex, isPlaying);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progressPercent = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = `${progressPercent}%`;
+                
+                currentTimeEl.textContent = formatTime(audio.currentTime);
+                durationTimeEl.textContent = formatTime(audio.duration);
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            nextBtn.click();
+        });
+
+        progressBar.addEventListener('click', (e) => {
             const width = progressBar.clientWidth;
             const clickX = e.offsetX;
-            audio.currentTime = (clickX / width) * audio.duration;
-        };
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        });
 
-        function formatTime(sec) {
-            const m = Math.floor(sec / 60);
-            const s = Math.floor(sec % 60);
-            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // Modal Upload Functionality
-        const modal = document.getElementById('uploadModal');
-        document.getElementById('openModalBtn').onclick = () => modal.style.display = 'flex';
-        document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
+        // Save v4 structure to clear cache
+        localStorage.setItem('elias_playlist_v4', JSON.stringify(defaultTracks));
 
-        document.getElementById('uploadForm').onsubmit = (e) => {
-            e.preventDefault();
-            const fileInput = document.getElementById('songFile');
-            const file = fileInput.files[0];
-            
-            if (file) {
-                const trackUrl = URL.createObjectURL(file);
-                const newTrack = {
-                    id: Date.now(),
-                    title: document.getElementById('songTitle').value,
-                    artist: "Elias Provenzano",
-                    album: document.getElementById('songAlbum').value,
-                    duration: "Local",
-                    cover: document.getElementById('songCover').value || "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=400&q=80",
-                    src: trackUrl
-                };
-
-                playlist.unshift(newTrack);
-                localStorage.setItem('elias_playlist', JSON.stringify(playlist));
-                modal.style.display = 'none';
-                selectTrack(0);
-            }
-        };
-
-        // Init
+        // Initial Load
         loadTrack(0);
     </script>
 </body>
