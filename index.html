@@ -73,7 +73,7 @@
 
         .hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
 
         .hero h1 {
@@ -85,7 +85,50 @@
             color: var(--text-secondary);
             font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
+        }
+
+        /* Biografía / Sobre mí */
+        .about-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .profile-img-container {
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .about-content h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            color: var(--text-color);
         }
 
         /* Player Section */
@@ -273,6 +316,7 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#musica">Música</a></li>
             </ul>
         </nav>
@@ -284,10 +328,22 @@
             <p>Portafolio oficial de proyectos y canciones.</p>
         </section>
 
+        <!-- Sección Sobre Mí con espacio para foto -->
+        <section class="about-section" id="sobre-mi">
+            <div class="profile-img-container">
+                <!-- Cuando subas tu foto a GitHub, reemplaza mi-foto.jpg por el nombre exacto de tu archivo -->
+                <img src="mi-foto.jpg" alt="Elias Provenzano" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80'">
+            </div>
+            <div class="about-content">
+                <h2>Sobre mí</h2>
+                <p>Marplatense de River y Melomano.</p>
+            </div>
+        </section>
+
         <section class="player-section" id="musica">
             <div class="now-playing">
                 <div id="artWrapper">
-                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=400&q=80" alt="Album Cover" class="album-art" id="currentCover">
+                    <img src="portada1.jpg" alt="Album Cover" class="album-art" id="currentCover">
                 </div>
                 <div class="track-info">
                     <h3 id="currentTitle">Selecciona una canción</h3>
@@ -340,7 +396,7 @@
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "portada2.jpg",
+                cover: "portada1.jpg",
                 src: "epilogo.mp3"
             },
             {
@@ -349,7 +405,7 @@
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "portada3.jpg",
+                cover: "portada1.jpg",
                 src: "exorcismo.mp3"
             },
             {
@@ -358,7 +414,7 @@
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "portada4.jpg",
+                cover: "portada1.jpg",
                 src: "gen de la locura.mp3"
             },
             {
@@ -367,7 +423,7 @@
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "portada5.jpg",
+                cover: "portada1.jpg",
                 src: "acaros en tu boca.mp3"
             },
             {
@@ -376,12 +432,12 @@
                 artist: "Elias Provenzano",
                 album: "Sencillo 2026",
                 duration: "--:--",
-                cover: "portada6.jpg",
+                cover: "portada1.jpg",
                 src: "go on.mp3"
             }
         ];
 
-        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v4')) || defaultTracks;
+        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v5')) || defaultTracks;
         let currentTrackIndex = 0;
         let isPlaying = false;
 
@@ -494,8 +550,8 @@
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // Save v4 structure to clear cache
-        localStorage.setItem('elias_playlist_v4', JSON.stringify(defaultTracks));
+        // Save v5 structure to clear cache
+        localStorage.setItem('elias_playlist_v5', JSON.stringify(defaultTracks));
 
         // Initial Load
         loadTrack(0);
