@@ -300,6 +300,132 @@
             color: var(--text-secondary);
         }
 
+        /* Sección de Vídeos */
+        .videos-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .videos-section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background-color: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            background-color: #000;
+        }
+
+        .video-wrapper iframe, 
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 1.2rem;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sección Contacto */
+        .contact-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background-color: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .contact-card-info h4 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            word-break: break-all;
+            transition: color 0.2s;
+        }
+
+        .contact-card-info a:hover {
+            color: var(--accent-color);
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -318,6 +444,8 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#musica">Música</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -339,6 +467,7 @@
             </div>
         </section>
 
+        <!-- Sección Música / Reproductor -->
         <section class="player-section" id="musica">
             <div class="now-playing">
                 <div id="artWrapper">
@@ -365,8 +494,37 @@
             <div class="playlist-container">
                 <h3>Lista de Reproducción</h3>
                 <ul class="playlist" id="playlist">
-                    <!-- Tracks rendered dynamically -->
+                    <!-- Tracks renderizados dinámicamente -->
                 </ul>
+            </div>
+        </section>
+
+        <!-- Sección Vídeos -->
+        <section class="videos-section" id="videos">
+            <h2>Vídeos</h2>
+            <div class="videos-grid" id="videosGrid">
+                <!-- Vídeos renderizados dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section class="contact-section" id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="contact-card-info">
+                        <h4>Correo Principal</h4>
+                        <a href="mailto:didilicantropico@gmail.com">didilicantropico@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <div class="contact-card-info">
+                        <h4>Correo Secundario</h4>
+                        <a href="mailto:provenzanoelias@hotmail.com">provenzanoelias@hotmail.com</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -378,7 +536,6 @@
     <audio id="audioPlayer"></audio>
 
     <script>
-        // Default Tracks
         const defaultTracks = [
             {
                 id: 1,
@@ -405,7 +562,7 @@
                 album: "Sencillo 2026",
                 duration: "--:--",
                 cover: "portada1.jpg",
-                src: "exorcismo.mp3"
+                src: "Exorcismo.mp3"
             },
             {
                 id: 4,
@@ -436,9 +593,42 @@
             }
         ];
 
-        // Forzar actualización a versión 6 limpiando el almacenamiento anterior
-        localStorage.setItem('elias_playlist_v6', JSON.stringify(defaultTracks));
-        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v6'));
+        // Lista de 6 vídeos. Puedes poner nombres de archivos locales (MP4) o enlaces de YouTube.
+        const videoList = [
+            {
+                title: "Vídeo 1",
+                description: "Presentación / Proceso Creativo",
+                src: "video1.mp4" 
+            },
+            {
+                title: "Vídeo 2",
+                description: "Sesión de Grabación",
+                src: "video2.mp4"
+            },
+            {
+                title: "Vídeo 3",
+                description: "En Vivo / Jam Session",
+                src: "video3.mp4"
+            },
+            {
+                title: "Vídeo 4",
+                description: "Guitar Riff & Demo",
+                src: "video4.mp4"
+            },
+            {
+                title: "Vídeo 5",
+                description: "Detrás de Escena",
+                src: "video5.mp4"
+            },
+            {
+                title: "Vídeo 6",
+                description: "Videoclip Oficial / Visualizer",
+                src: "video6.mp4"
+            }
+        ];
+
+        localStorage.setItem('elias_playlist_v10', JSON.stringify(defaultTracks));
+        let playlist = JSON.parse(localStorage.getItem('elias_playlist_v10'));
         let currentTrackIndex = 0;
         let isPlaying = false;
 
@@ -451,6 +641,33 @@
         const progressFill = document.getElementById('progressFill');
         const currentTimeEl = document.getElementById('currentTime');
         const durationTimeEl = document.getElementById('durationTime');
+        const videosGrid = document.getElementById('videosGrid');
+
+        function renderVideos() {
+            videosGrid.innerHTML = '';
+            videoList.forEach(vid => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                
+                let mediaElement = '';
+                if (vid.src.includes('youtube.com') || vid.src.includes('youtu.be')) {
+                    mediaElement = `<iframe src="${vid.src}" allowfullscreen></iframe>`;
+                } else {
+                    mediaElement = `<video controls preload="metadata"><source src="${vid.src}" type="video/mp4">Tu navegador no soporta vídeo.</video>`;
+                }
+
+                card.innerHTML = `
+                    <div class="video-wrapper">
+                        ${mediaElement}
+                    </div>
+                    <div class="video-info">
+                        <h3>${vid.title}</h3>
+                        <p>${vid.description}</p>
+                    </div>
+                `;
+                videosGrid.appendChild(card);
+            });
+        }
 
         function renderPlaylist() {
             playlistContainer.innerHTML = '';
@@ -551,7 +768,7 @@
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // Carga inicial
+        renderVideos();
         loadTrack(0);
     </script>
 </body>
