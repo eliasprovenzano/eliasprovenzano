@@ -593,17 +593,16 @@
             }
         ];
 
-        // Lista de 6 vídeos. Puedes poner nombres de archivos locales (MP4) o enlaces de YouTube.
         const videoList = [
             {
                 title: "Cruzando el Chinvat",
                 description: "Presentación / Proceso Creativo",
-                src: "https://youtube.com/embed/g7U6NAnWe8Q" 
+                src: "https://www.youtube.com/embed/g7U6NAnWe8Q"
             },
             {
-                title: "Almost Bach"
-                description: "Improvisacion ",
-                src: https:"https://youtube.com/shorts/4ym_FTCK0Zw"
+                title: "Almost Bach",
+                description: "Improvisacion",
+                src: "https://www.youtube.com/embed/4ym_FTCK0Zw"
             },
             {
                 title: "Vídeo 3",
@@ -627,6 +626,7 @@
             }
         ];
 
+        // Sincronización en caché del navegador (v10)
         localStorage.setItem('elias_playlist_v10', JSON.stringify(defaultTracks));
         let playlist = JSON.parse(localStorage.getItem('elias_playlist_v10'));
         let currentTrackIndex = 0;
